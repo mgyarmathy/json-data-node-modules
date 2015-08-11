@@ -1,0 +1,15 @@
+{
+  "name": "node-modules-store-json-data",
+  "version": "1.0.0",
+  "description": "Using Node Modules to Store Semi-Static JSON Data -- Credera Insights Blog",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "^1.4.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
