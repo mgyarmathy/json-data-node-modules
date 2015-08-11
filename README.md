@@ -31,7 +31,7 @@ For example, say that you have a set of employee information that is shared amon
   ...
 ]
 ```
-> Note: Employee data is fictional and has been provided by [uiFaces](http://uifaces.com) and [uiNames](http://uinames.com).
+> Employee data is fictional and has been provided by [uiFaces](http://uifaces.com) and [uiNames](http://uinames.com).
 
 The data above can be wrapped in a node module with just a single line of code:
 
@@ -41,7 +41,7 @@ The data above can be wrapped in a node module with just a single line of code:
 module.exports = require('path/to/employee-data.json');
 ```
 
-Publish your module to NPM using a descriptive name to make it available to other NodeJS developers. In the case that you need to update the information stored in your module, be sure to update its version number so that anyone who uses it can pull the updated information with `npm update`. For more information on how to create and publish a node module to NPM, see the official documentation at [docs.npmjs.com](https://docs.npmjs.com/).
+Publish your module to NPM using a descriptive name to make it publicly available to other NodeJS developers. (If your module's data is private, consider using [NPM private modules](https://www.npmjs.com/private-modules) to control who has access to it.) In the case that you need to update the information stored in your module, be sure to update its version number so that anyone who uses it can pull the updated information with `npm update`. For more information on how to create and publish a node module to NPM, see the official documentation at [docs.npmjs.com](https://docs.npmjs.com/).
 
 If you'd like to learn more about using JSON Data Node Modules on the front-end, read my follow-up to this post: [Consuming JSON Data Node Modules in the Browser with Browserify](http://www.credera.com/link-to-article).
 
@@ -62,8 +62,19 @@ In my previous post, I talked about how to create JSON Data Node Modules. This p
 In our example application, assume that we've already initialized our application's `package.json` file with `npm init` and are ready to incorporate our employee data module. We're also going to use AngularJS to handle presenting this information on the front-end. Run the following commands to download and add these two node modules to our application:
 
 ```
-npm install mycompany-employee-data --save
 npm install angular --save
+npm install mycompany-employee-data --save
+```
+
+In order to keep our `mycompany-employee-data` module up to date, modify `package.json` and change the dependency version to "latest".
+
+```javascript
+...
+"dependencies": {
+    "angular": "^1.4.3",
+    "mycompany-employee-data": "latest"
+},
+...
 ```
 
 We will use the Javascript code below to load our employee data module and include it in the Angular `$scope` object of our application's data model.
@@ -89,7 +100,7 @@ Next, run the following command to have Browserify bundle our script along with 
 ```
 browserify js/main.js > js/bundle.js
 ```
->Note: if you have not installed Browserify, install it globally for command-line use with `npm install -g browserify`.
+> If you have not installed Browserify, install it globally for command-line use with `npm install -g browserify`.
 
 For the last step, we are going to use the HTML template below to display our employee data. (This example uses [Materialize.css](http://materializecss.com/) for all of our CSS styling). It is essential to include the Browserify-generated `js/bundle.js` <small>(line 7)</small> rather than `js/main.js` for this to work.
 
@@ -128,7 +139,7 @@ For the last step, we are going to use the HTML template below to display our em
 View index.html in your browser of choice to see our finished result:
 
 ![](screenshot.png)
-> Note: Employee data is fictional and has been provided by [uiFaces](http://uifaces.com) and [uiNames](http://uinames.com).
+> Employee data is fictional and has been provided by [uiFaces](http://uifaces.com) and [uiNames](http://uinames.com).
 
 In this tutorial, we learned how to use Browserify to bundle JSON Data Node Modules in with our application's scripts. By wrapping static, domain-specific data into node modules, we can easily store and distribute this data through NPM, rather than using a database. Have you used JSON Data Node Modules in your projects? Share your experiences in the comments below.
 
