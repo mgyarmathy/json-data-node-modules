@@ -5,11 +5,19 @@ tags: Javascript, NodeJS, NPM, JSON, Node Modules, Browserify
 <!-- Part 1 -->
 #Using JSON Data Node Modules and NPM to Store and Distribute Static Data
 
+*The following post is the first of a two-part series covering JSON Data Node modules and how to use them in the browser with Browserify. This post covers how to create JSON Data Node Modules and potential use cases for this type of module.*
+
 <img style="display: block; margin: 0 auto;" src="http://i.imgur.com/DtHsMG5.png"/>
 
 NodeJS modules, along with Node Package Manager (NPM), are a great way for Javascript developers to share modularized bits of code. By publishing your module to NPM, anyone can include it in their NodeJS application with a simple `npm install your-package-name`. NodeJS developers have also used local node modules to store configuration data used throughout their application. In this way, config data can be accessed by `var config = require('path/to/config.json')`.
 
 But there's also a third, less-common usage: node modules can also be used for storing and distributing static data. I refer to these types of node modules as JSON Data Node Modules. These modules are particularly useful when your application requires information that is public, static, and domain-specific. NPM can be leveraged to host and distribute static data. In addition, these modules are a great alternative to using a database to store and access your information.
+
+There are several use cases that this type of module is suitable for. A few examples are:
+
+- public reference information (e.g., [country ISO codes and currencies](https://www.npmjs.com/package/country-data), [CMU pronouncing dictionary](https://www.npmjs.com/package/cmu-pronouncing-dictionary), etc.)
+- domain-specific information (e.g., [list of Marvel characters](https://www.npmjs.com/package/marvel-characters), [list of flower names](https://www.npmjs.com/package/flowers), etc.)
+- proprietary business information
 
 For example, say that you have a set of employee information that is shared among several different internal applications. This data is relatively static, only updated occasionally as employees join or leave the company.
 
@@ -69,6 +77,7 @@ npm install mycompany-employee-data --save
 In order to keep our `mycompany-employee-data` module up to date, modify `package.json` and change the dependency version to "latest".
 
 ```javascript
+// package.json
 ...
 "dependencies": {
     "angular": "^1.4.3",
