@@ -102,7 +102,7 @@ angular.module('employeeInfo', [])
 });
 ```
 
-We `require()` our employee data module just like any other node module. All of the JSON data included in this module is now assigned to our `employeeData` variable. We then add it to the scope of our Angular `MainCtrl` with `$scope.employees = employeeData` <small>(line 10)</small>.
+We `require()` our employee data module just like any other node module. All of the JSON data included in this module is now assigned to our `employeeData` variable. We then add it to the scope of our Angular `MainCtrl` with `vm.employees = employeeData` <small>(line 11)</small>.
 
 Next, run the following command to have Browserify bundle our script along with the node modules we have required:
 
