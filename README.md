@@ -97,8 +97,9 @@ var employeeData = require('mycompany-employee-data');
 
 angular.module('employeeInfo', [])
 
-.controller('MainCtrl', function($scope) {
-    $scope.employees = employeeData;
+.controller('MainCtrl', function() {
+	var vm = this;
+    vm.employees = employeeData;
 });
 ```
 
@@ -124,11 +125,11 @@ For the last step, we are going to use the HTML template below to display our em
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
     <script type="text/javascript" src="js/bundle.js" ></script>
 </head>
-<body ng-controller="MainCtrl">
+<body ng-controller="MainCtrl as vm">
   <div class="container">
     <h1>Our Employees</h1>
     <div class="row">
-      <div ng-repeat="employee in employees" class="col s3">
+      <div ng-repeat="employee in vm.employees" class="col s3">
         <div class="card">
           <div class="card-image">
             <img ng-src="{{employee.img}}">
