@@ -7,7 +7,7 @@ tags: JavaScript, NodeJS, NPM, JSON, Node Modules, Browserify
 
 *The following post is the first of a two-part series covering JSON Data Node modules and how to use them in the browser with Browserify. This post covers how to create JSON Data Node Modules and potential use cases for this type of module.*
 
-<img style="display: block; margin: 0 auto;" src="http://i.imgur.com/DtHsMG5.png"/>
+<img style="display: block; margin: 25px auto;" src="http://i.imgur.com/DtHsMG5.png"/>
 
 NodeJS modules, along with Node Package Manager (NPM), are a great way for JavaScript developers to share modularized bits of code. By publishing your module to NPM, anyone can include it in their NodeJS application with a simple `npm install your-package-name`. NodeJS developers have also used local node modules to store configuration data used throughout their application. In this way, config data can be accessed by `var config = require('path/to/config.json')`.
 
@@ -60,10 +60,9 @@ If you'd like to learn more about using JSON Data Node Modules on the front-end,
 
 *This post is a follow-up to the previous post: [Using NodeJS JSON Data Modules and NPM to Store and Distribute Static Data](http://www.credera.com/link-to-article).*
 
-In my previous post, I talked about how to create JSON Data Node Modules. This post is a tutorial explaining how to use Browserify to utilize this type of node module in front-end applications.
+In my previous post, I talked about how to create JSON Data Node Modules. This post is a tutorial explaining how to use Browserify to utilize this type of node module in front-end applications. If you'd like to follow along with this exercise, some sample code can be found on GitHub at [mgyarmathy/node-json-data-modules](https://github.com/mgyarmathy/json-data-node-modules).
 
-
-<img style="display: block; margin: 0 auto;" src="http://substack.net/images/browserify_logo.png">
+<img style="display: block; margin: 25px auto 20px;" src="http://substack.net/images/browserify_logo.png">
 
 [Browserify](http://browserify.org/) is a tool that enables you to `require()` node modules in the browser, similar to NodeJS. It works by concatenating your modules, along with their dependencies, into a single bundle. This also gives your application a performance improvement by reducing the number of HTTP requests to the server to load your scripts.
 
@@ -86,7 +85,7 @@ In order to keep our `mycompany-employee-data` module up to date, modify `packag
 ...
 ```
 
-We will use the JavaScript code below to load our employee data module and include it in the Angular `$scope` object of our application's data model.
+We will use the JavaScript code below to load our employee data module and include it in our Angular application's data model.
 
 ```javascript
 // js/main.js
