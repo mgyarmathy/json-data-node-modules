@@ -5,6 +5,7 @@ var employeeData = require('employee-data');
 
 angular.module('employeeInfo', [])
 
-.controller('MainCtrl', function($scope) {
-    $scope.employees = employeeData;
+.controller('MainCtrl', function() {
+    var vm = this;
+    vm.employees = employeeData;
 });
