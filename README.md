@@ -1,5 +1,5 @@
 ---
-tags: Javascript, NodeJS, NPM, JSON, Node Modules, Browserify
+tags: JavaScript, NodeJS, NPM, JSON, Node Modules, Browserify
 ---
 
 <!-- Part 1 -->
@@ -9,15 +9,15 @@ tags: Javascript, NodeJS, NPM, JSON, Node Modules, Browserify
 
 <img style="display: block; margin: 0 auto;" src="http://i.imgur.com/DtHsMG5.png"/>
 
-NodeJS modules, along with Node Package Manager (NPM), are a great way for Javascript developers to share modularized bits of code. By publishing your module to NPM, anyone can include it in their NodeJS application with a simple `npm install your-package-name`. NodeJS developers have also used local node modules to store configuration data used throughout their application. In this way, config data can be accessed by `var config = require('path/to/config.json')`.
+NodeJS modules, along with Node Package Manager (NPM), are a great way for JavaScript developers to share modularized bits of code. By publishing your module to NPM, anyone can include it in their NodeJS application with a simple `npm install your-package-name`. NodeJS developers have also used local node modules to store configuration data used throughout their application. In this way, config data can be accessed by `var config = require('path/to/config.json')`.
 
 But there's also a third, less-common usage: node modules can also be used for storing and distributing static data. I refer to these types of node modules as JSON Data Node Modules. These modules are particularly useful when your application requires information that is public, static, and domain-specific. NPM can be leveraged to host and distribute static data. In addition, these modules are a great alternative to using a database to store and access your information.
 
 There are several use cases that this type of module is suitable for. A few examples are:
 
 - public reference information (e.g., [country ISO codes and currencies](https://www.npmjs.com/package/country-data), [CMU pronouncing dictionary](https://www.npmjs.com/package/cmu-pronouncing-dictionary), etc.)
-- domain-specific information (e.g., [list of Marvel characters](https://www.npmjs.com/package/marvel-characters), [list of flower names](https://www.npmjs.com/package/flowers), etc.)
-- proprietary business information
+- domain-specific information (e.g., [list of all Marvel characters](https://www.npmjs.com/package/marvel-characters), [list of flower names](https://www.npmjs.com/package/flowers), etc.)
+- proprietary business codes
 
 For example, say that you have a set of employee information that is shared among several different internal applications. This data is relatively static, only updated occasionally as employees join or leave the company.
 
@@ -65,7 +65,7 @@ In my previous post, I talked about how to create JSON Data Node Modules. This p
 
 <img style="display: block; margin: 0 auto;" src="http://substack.net/images/browserify_logo.png">
 
-[Browserify](http://browserify.org/) is a tool that enables you to `require()` node modules in the browser, similar to NodeJS. It works by concatenating your modules, along with their dependendies, into a single bundle. This also gives your application a performance improvement by reducing the number of HTTP requests to the server to load your scripts.
+[Browserify](http://browserify.org/) is a tool that enables you to `require()` node modules in the browser, similar to NodeJS. It works by concatenating your modules, along with their dependencies, into a single bundle. This also gives your application a performance improvement by reducing the number of HTTP requests to the server to load your scripts.
 
 In our example application, assume that we've already initialized our application's `package.json` file with `npm init` and are ready to incorporate our employee data module. We're also going to use AngularJS to handle presenting this information on the front-end. Run the following commands to download and add these two node modules to our application:
 
@@ -86,7 +86,7 @@ In order to keep our `mycompany-employee-data` module up to date, modify `packag
 ...
 ```
 
-We will use the Javascript code below to load our employee data module and include it in the Angular `$scope` object of our application's data model.
+We will use the JavaScript code below to load our employee data module and include it in the Angular `$scope` object of our application's data model.
 
 ```javascript
 // js/main.js
