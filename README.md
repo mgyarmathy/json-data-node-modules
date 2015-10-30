@@ -56,8 +56,8 @@ If you'd like to learn more about using JSON data node modules on the front-end,
 **References:**
 
 - [GitHub source code](https://github.com/mgyarmathy/json-data-node-modules)
-- [Browserify](http://browserify.org/)
 - [NPM](https://www.npmjs.com/)
+- [NPM private modules](https://www.npmjs.com/private-modules)
 
 ---
 
