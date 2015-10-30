@@ -1,7 +1,7 @@
 'use strict';
 
 var angular = require('angular');
-var employeeData = require('employee-data');
+var employeeData = require('mycompany-employee-data');
 
 angular.module('employeeInfo', [])
 

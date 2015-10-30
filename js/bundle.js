@@ -2,7 +2,7 @@
 'use strict';
 
 var angular = require('angular');
-var employeeData = require('employee-data');
+var employeeData = require('mycompany-employee-data');
 
 angular.module('employeeInfo', [])
 
@@ -10,7 +10,7 @@ angular.module('employeeInfo', [])
     var vm = this;
     vm.employees = employeeData;
 });
-},{"angular":3,"employee-data":5}],2:[function(require,module,exports){
+},{"angular":3,"mycompany-employee-data":4}],2:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.3
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -28380,6 +28380,11 @@ require('./angular');
 module.exports = angular;
 
 },{"./angular":2}],4:[function(require,module,exports){
+'use strict';
+
+module.exports = require('./mycompany-employee-data.json');
+
+},{"./mycompany-employee-data.json":5}],5:[function(require,module,exports){
 module.exports=[
   {
     "id": 101, 
@@ -28401,7 +28406,7 @@ module.exports=[
   },
   {
     "id": 104,
-    "img": "https://s3.amazonaws.com/uifaces/faces/twitter/gerrenlamson/128.jpg",
+    "img": "https://s3.amazonaws.com/uifaces/faces/twitter/kerem/128.jpg",
     "name": "Jason Jones",
     "department": "Engineering"
   },
@@ -28430,9 +28435,4 @@ module.exports=[
     "department": "Engineering"
   }
 ]
-},{}],5:[function(require,module,exports){
-'use strict';
-
-module.exports = require('./employee-data.json');
-
-},{"./employee-data.json":4}]},{},[1]);
+},{}]},{},[1]);
